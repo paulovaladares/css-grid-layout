@@ -47,28 +47,6 @@ img {
     "footer footer footer";
 }
 
-@media (max-width: 1200px) {
-  .estrutura {
-    grid-template-areas:
-      "header header header"
-      "sidenav content content"
-      "sidenav adds adds"
-      "footer footer footer";
-  }
-}
-
-@media (max-width: 760px) {
-  .estrutura {
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "header"
-      "sidenav"
-      "content"
-      "adds"
-      "footer";
-  }
-}
-
 /* HEADER */
 
 .header {
@@ -294,4 +272,71 @@ img {
 .footer p {
   color: white;
   text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .estrutura {
+    grid-template-areas:
+      "header header header"
+      "sidenav content content"
+      "sidenav adds adds"
+      "footer footer footer";
+  }
+}
+
+@media (max-width: 760px) {
+  .estrutura {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidenav"
+      "content"
+      "adds"
+      "footer";
+  }
+  .header {
+    grid-template-columns: auto;
+  }
+  .logo {
+    margin-bottom: 20px;
+  }
+  .topnav ul {
+    justify-content: flex-start;
+    column-gap: 10px;
+  }
+  .topnav a {
+    font-size: 1rem;
+  }
+  .sidenav {
+    position: relative;
+    overflow-x: auto;
+    padding: 0 30px;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+  @keyframes seta {
+    from {
+      right: 30px;
+    }
+    to {
+      right: 20px;
+    }
+  }
+  .sidenav::after {
+    content: "→";
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    color: rgba(0, 0, 0, 0.3);
+    animation: seta 0.3s ease-in infinite alternate;
+  }
+  .sidenav ul {
+    display: flex;
+  }
+  .sidenav li {
+    flex: 1 0 60px;
+  }
+  .sidenav li a {
+    margin: 30px 30px 30px 0;
+  }
 }
