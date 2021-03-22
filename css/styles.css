@@ -34,6 +34,7 @@ a {
 img {
   display: block;
   width: 100%;
+  max-width: 100%;
   border-radius: var(--radius);
 }
 
@@ -136,15 +137,11 @@ img {
   align-self: end;
 }
 
-.content p {
+p {
   font-size: 1.2rem;
   line-height: 1.6;
   letter-spacing: -0.005rem;
   color: var(--font-color);
-}
-
-.content p + p {
-  margin-top: 30px;
 }
 
 .content p.destaque {
@@ -193,17 +190,21 @@ img {
   border-top: 2px solid var(--purple-light);
 }
 
+.informacoes p + p {
+  margin-top: 30px;
+}
+
 .titulo {
   color: var(--purple-light);
 }
 
-.title h1 {
+.titulo h1 {
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 700;
 }
 
-.title span {
+.titulo span {
   font-size: 0.875rem;
   font-style: italic;
 }
@@ -267,12 +268,12 @@ img {
 .footer {
   grid-area: footer;
   background: var(--gradient);
-  padding: 30px;
 }
 
 .footer p {
   color: white;
   text-align: center;
+  padding: 30px;
 }
 
 @media (max-width: 1200px) {
